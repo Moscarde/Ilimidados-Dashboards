@@ -22,7 +22,7 @@ class EtlLinkedin:
         # Temporário, processar dados passando uma lista de extrações enquanto não houver validação do mentor
         
         # Limpando pasta de saída
-        self.clear_output()  
+        # self.clear_output()  
 
         for folder_date in extractions_dates:
             self.process_data(folder_date)
@@ -199,6 +199,7 @@ class EtlLinkedin:
                 "Date",
                 "Followers Sponsored",
                 "Followers Organic",
+                "Followers Invited Automatically", #Seguidores convidados automaticamente
                 "Total Followers",
             ],
             "followers_location": ["Location", "Total Followers"],
@@ -246,7 +247,7 @@ class EtlLinkedin:
                 "Total Posts",
             ],
         }
-
+        print("Transforming", category)
         df.columns = english_cols.get(category)
 
         if category == "content_metrics":
