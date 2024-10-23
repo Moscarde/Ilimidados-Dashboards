@@ -6,6 +6,9 @@ if __name__ == "__main__":
     if not os.path.exists("linkedin/data/raw/365d"):
         print("Criando diretórios...")
         os.makedirs("linkedin/data/raw/365d")
+        os.makedirs("linkedin/data/processed/365d")
+        print("Adicione os arquivos de extrações novas em 'etl/linkedin/data/raw/365d/<MES>'")
+        print("Adicione os arquivos processados anteriormente em 'etl/linkedin/data/processed/365d/'")
         exit()
 
 

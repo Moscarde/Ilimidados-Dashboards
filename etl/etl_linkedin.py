@@ -356,6 +356,7 @@ class EtlLinkedin:
         return df["Date"].max().date()
 
     def concatenate(self, dfs, path_export):
+        os.makedirs(path_export, exist_ok=True)
         if len(os.listdir(path_export)) > 0:
             print("Clean data detected! Concatenating...")
             for df in dfs:
